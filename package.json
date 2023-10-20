@@ -1,12 +1,23 @@
 {
   "name": "material-testes-automatizados",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
+  "author": "Daniel G. Lopes <danielopesgl05@gmail.com>",
+  "license": "MIT",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rimraf dist && tsc",
+    "start": "node dist/main/api"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "dependencies": {
+    "module-alias": "^2.2.3"
+  },
+  "devDependencies": {
+    "@types/module-alias": "^2.0.3",
+    "@types/node": "^20.8.7",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.2.2"
+  },
+  "engines": {
+    "node": "18.x"
+  }
 }
