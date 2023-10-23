@@ -5,7 +5,7 @@
   "author": "Daniel G. Lopes <danielopesgl05@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "rimraf dist && tsc",
+    "build": "rimraf dist && tsc -p tsconfig-build.json",
     "start": "node dist/main/api"
   },
   "dependencies": {
@@ -15,7 +15,7 @@
     "@types/module-alias": "^2.0.3",
     "@types/node": "^20.8.7",
     "rimraf": "^5.0.5",
-    "typescript": "^5.2.2"
+    "typescript": "*"
   },
   "engines": {
     "node": "18.x"
