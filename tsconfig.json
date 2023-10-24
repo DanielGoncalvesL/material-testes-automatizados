@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "outDir": "dist",
-    "rootDir": "src",
+    "rootDirs": ["src", "tests"],
     "sourceMap": true,
     "target": "ES2022",
     "skipLibCheck": true,
