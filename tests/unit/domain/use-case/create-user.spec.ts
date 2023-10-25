@@ -1,7 +1,7 @@
 import { type CheckUserByEmailRepository, type CreateUserRepository } from '@/domain/contracts/repositories/user'
 import { EmailAlreadyUseError } from '@/domain/entities/errors/email-already-use'
 import { setupCreateUser, type CreateUser } from '@/domain/use-case/create-user'
-import { throwError } from '@/tests/mocks/throwError'
+import { throwError } from '@/tests/mocks'
 import { mock, type MockProxy } from 'jest-mock-extended'
 
 describe('CreateUser', () => {
