@@ -31,7 +31,7 @@ describe('UserRoutes', () => {
 
       it('should return 200 with AccessToken', async () => {
         const { body } = await request(app)
-          .post('/api/signup')
+          .post('/api/create-user')
           .send(requestData)
           .expect(200)
 
@@ -41,16 +41,16 @@ describe('UserRoutes', () => {
         expect(body).toHaveProperty('age')
       })
 
-      it('should return 401 if email already exists', async () => {
-        await request(app).post('/api/signup').send(requestData).expect(200)
+      it('should return 400 if email already exists', async () => {
+        await request(app).post('/api/create-user').send(requestData).expect(200)
 
         const { body } = await request(app)
-          .post('/api/signup')
+          .post('/api/create-user')
           .send(requestData)
           .expect(400)
 
         expect(body).toEqual({
-          error: 'SignUp failed: Email already use'
+          error: 'Create user failed: Email already use'
         })
       })
     })

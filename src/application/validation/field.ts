@@ -1,4 +1,4 @@
 export interface Field {
-  value: string | any[]
+  value: any
   name: string
 }

@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "incremental": true,
     "outDir": "dist",
     "rootDirs": ["src", "tests"],
     "sourceMap": true,
@@ -7,7 +8,7 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "moduleResolution": "Node",
-    "module": "CommonJS",
+    "module": "commonjs",
     "esModuleInterop": true,
     "baseUrl": "src",
     "paths": {
@@ -15,6 +16,8 @@
       "@/tests/*": ["../tests/*"]
     },
     "strict": true,
+    "noImplicitOverride": true,
+    "removeComments": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true
   },

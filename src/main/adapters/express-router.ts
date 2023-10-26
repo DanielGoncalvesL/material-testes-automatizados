@@ -1,4 +1,4 @@
-import { type Controller } from '@/application/controllers'
+import { type Controller } from '@/application/controllers/controller'
 
 import { type RequestHandler } from 'express'
 

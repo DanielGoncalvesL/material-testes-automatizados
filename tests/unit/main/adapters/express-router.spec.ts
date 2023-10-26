@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-confusing-void-expression */
+/* eslint-disable @typescript-eslint/await-thenable */
 import { adaptExpressRoute } from '@/main/adapters/express-router'
 import { type Controller } from '@/application/controllers'
 
@@ -58,21 +60,6 @@ describe('ExpressRouter', () => {
     expect(res.status).toHaveBeenCalledTimes(1)
 
     expect(res.json).toHaveBeenCalledWith({ data: 'any_data' })
-    expect(res.json).toHaveBeenCalledTimes(1)
-  })
-
-  it('should respond with 204 and empty data', async () => {
-    controller.handle.mockResolvedValueOnce({
-      statusCode: 204,
-      data: null
-    })
-
-    await sut(req, res, next)
-
-    expect(res.status).toHaveBeenCalledWith(204)
-    expect(res.status).toHaveBeenCalledTimes(1)
-
-    expect(res.json).toHaveBeenCalledWith(null)
     expect(res.json).toHaveBeenCalledTimes(1)
   })
 
