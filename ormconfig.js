@@ -7,9 +7,5 @@ module.exports = {
   username: process.env.POSTGRESQL_USERNAME,
   password: process.env.POSTGRESQL_PASSWORD,
   database: process.env.POSTGRESQL_DATABASE,
-  entities: [`./${root}/infra/db/postgres/entities/index.{js,ts}`],
-  // migrations: [`./${root}/infra/db/typeorm/migrations/*.{js,ts}`],
-  // cli: {
-  //     "migrationsDir": `./${root}/infra/db/typeorm/migrations/`
-  // },
+  entities: [`./${root}/infra/db/postgres/entities/index.{js,ts}`]
 };

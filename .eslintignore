@@ -2,3 +2,4 @@ node_modules
 dist
 babel.config.js
 ormconfig.js
+jest.config.ts
