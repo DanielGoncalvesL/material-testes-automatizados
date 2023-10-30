@@ -1,6 +1,7 @@
 node_modules
 dist
 babel.config.js
-ormconfig.js
 jest.config.js
 jest.e2e.config.js
+ormconfig.js
+stryker.config.mjs

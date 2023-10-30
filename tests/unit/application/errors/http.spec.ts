@@ -24,9 +24,11 @@ describe('HttpErros', () => {
   })
 
   describe('ServerError', () => {
-    const error = new ServerError()
+    it('should be able to return correct name and message', () => {
+      const error = new ServerError()
 
-    expect(error.message).toBe('Server failed. Try again soon')
-    expect(error.name).toBe('ServerError')
+      expect(error.message).toBe('Server failed. Try again soon')
+      expect(error.name).toBe('ServerError')
+    })
   })
 })

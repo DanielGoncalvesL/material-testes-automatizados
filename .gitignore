@@ -4,3 +4,5 @@ yarn-error.log
 tests/coverage
 yarn.lock
 .env
+# stryker temp files
+.stryker-tmp
