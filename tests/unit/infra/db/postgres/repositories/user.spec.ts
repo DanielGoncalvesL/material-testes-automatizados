@@ -1,4 +1,3 @@
-import { type IBackup } from 'pg-mem'
 import { type Repository } from 'typeorm'
 import { validate } from 'uuid'
 
@@ -8,20 +7,17 @@ import {
   PgUserRepository,
   PgRepository
 } from '@/infra/db/postgres/repositories'
-import { makeFakeDb } from '@/tests/mocks'
+import { FakeDb } from '@/tests/mocks'
 
 describe('PgUserRepository', () => {
   let sut: PgUserRepository
   let connection: PgConnection
   let pgUserRepo: Repository<PgUser>
-  let backup: IBackup
 
   beforeAll(async () => {
     connection = PgConnection.getInstance()
 
-    const db = await makeFakeDb()
-
-    backup = db.backup()
+    await FakeDb.getInstance().connect()
 
     pgUserRepo = connection.getRepository(PgUser)
   })
@@ -30,8 +26,8 @@ describe('PgUserRepository', () => {
     await PgConnection.getInstance().disconnect()
   })
 
-  beforeEach(() => {
-    backup.restore()
+  beforeEach(async () => {
+    await FakeDb.getInstance().restore()
 
     sut = new PgUserRepository()
   })

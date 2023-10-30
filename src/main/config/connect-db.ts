@@ -6,7 +6,7 @@ export const connectDb = async (): Promise<void> => {
     PgConnection.getInstance()
       .connect()
       .then(async () => {
-        await getConnection().synchronize()
+        await getConnection().runMigrations()
       })
   ])
 }

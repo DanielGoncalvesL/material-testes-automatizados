@@ -1,25 +1,20 @@
 import request from 'supertest'
-import { type IBackup } from 'pg-mem'
 
-import { makeFakeDb } from '@/../tests/mocks'
+import { FakeDb } from '@/../tests/mocks'
 import { PgConnection } from '@/infra/db/postgres/helpers'
 import { app } from '@/main/config/app'
 
 describe('UserRoutes', () => {
-  let backup: IBackup
-
   beforeAll(async () => {
-    const db = await makeFakeDb()
-
-    backup = db.backup()
+    await FakeDb.getInstance().connect()
   })
 
   afterAll(async () => {
     await PgConnection.getInstance().disconnect()
   })
 
-  beforeEach(() => {
-    backup.restore()
+  beforeEach(async () => {
+    await FakeDb.getInstance().restore()
   })
   describe('CreateUser', () => {
     describe('POST /create-user', () => {
