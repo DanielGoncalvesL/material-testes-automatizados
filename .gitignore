@@ -6,3 +6,4 @@ yarn.lock
 .env
 # stryker temp files
 .stryker-tmp
+.vscode
